@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechKart | Electronics Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="#" class="logo">
+            Tech<span>Kart</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#categories">Categories</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="cart-button" onclick="toggleCart()">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">WELCOME TO TECHKART</p>
+
+            <h1>
+                Upgrade Your
+                <span>Tech Life</span>
+            </h1>
+
+            <p>
+                Discover laptops, smartphones, headphones
+                and the latest electronics at TechKart.
+            </p>
+
+            <a href="#products" class="hero-button">
+                Shop Now →
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+            <div class="tech-circle">💻</div>
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="categories" id="categories">
+
+        <h2>Shop By Category</h2>
+
+        <div class="category-list">
+
+            <button onclick="filterProducts('All')">
+                🛍️ All
+            </button>
+
+            <button onclick="filterProducts('Laptops')">
+                💻 Laptops
+            </button>
+
+            <button onclick="filterProducts('Mobiles')">
+                📱 Mobiles
+            </button>
+
+            <button onclick="filterProducts('Audio')">
+                🎧 Audio
+            </button>
+
+            <button onclick="filterProducts('Accessories')">
+                ⌨️ Accessories
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS SECTION -->
+    <main class="products-section" id="products">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="small-title">OUR COLLECTION</p>
+                <h2>Featured Products</h2>
+            </div>
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search products..."
+                oninput="searchProducts()"
+            >
+
+        </div>
+
+        <div id="product-grid" class="product-grid"></div>
+
+    </main>
+
+
+    <!-- CART SIDEBAR -->
+    <aside id="cart-panel" class="cart-panel">
+
+        <div class="cart-header">
+
+            <h2>Your Cart 🛒</h2>
+
+            <button onclick="toggleCart()" class="close-button">
+                ✕
+            </button>
+
+        </div>
+
+        <div id="cart-items" class="cart-items">
+
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+        <div class="cart-footer">
+
+            <h3>
+                Total:
+                ₹<span id="cart-total">0</span>
+            </h3>
+
+            <button class="checkout-button" onclick="openCheckout()">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkout-modal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close-button" onclick="closeCheckout()">
+                ✕
+            </button>
+
+            <h2>Checkout</h2>
+
+            <p>Enter your details to place a demo order.</p>
+
+            <form id="checkout-form">
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="customer-email"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <textarea
+                    id="customer-address"
+                    placeholder="Delivery Address"
+                    required
+                ></textarea>
+
+                <button type="submit" class="checkout-button">
+                    Place Demo Order
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <p class="small-title">GET IN TOUCH</p>
+
+        <h2>Need Help?</h2>
+
+        <p>
+            Contact us for product information and support.
+        </p>
+
+        <a href="mailto:support@techkart.example">
+            support@techkart.example
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>Tech<span>Kart</span></h2>
+
+        <p>© 2026 TechKart. Demo store.</p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
